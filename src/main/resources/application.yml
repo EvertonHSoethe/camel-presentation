@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: camel-presentation
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: false
+    serialization:
+      fail-on-empty-beans: false
+
+camel:
+  springboot:
+    name: $(spring.application.name)
+    stream-caching-enable: true
+    jmx-enabled: false
+    use-mdc-logging: true
+    message-history: true
+    source-location-enabled: true
+  component:
+    rest-api:
+      enabled: true
+  dataformat:
+    jackson:
+      auto-discover-object-mapper: true
